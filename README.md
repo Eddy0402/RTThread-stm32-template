@@ -2,9 +2,18 @@
 
 ## Build
 
-export RTT\_ROOT=$(PWD)/rt-thread
-scons
+./build.sh
 
-## Flash
+## Emulate with [qemu\_stm32][1]
 
-st-flash rtthread.bin 0x8000000
+1. Check the path to qemu\_stm32 in emulate.sh
+2. Emulate/debug with qemu\_stm32
+
+
+    ./emulate
+
+or
+
+    ./emulate -d
+
+[1]: https://github.com/beckus/qemu_stm32
