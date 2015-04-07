@@ -2,3 +2,6 @@
 *.axf
 .sconsign.dblite
 build
+.ycm_extra_conf.py
+.ycm_extra_conf.pyc
+tags
