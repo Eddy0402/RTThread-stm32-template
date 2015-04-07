@@ -214,8 +214,6 @@ void USART2_IRQHandler(void)
     if(USART_GetITStatus(uart->uart_device, USART_IT_RXNE) != RESET)
     {
         rt_hw_serial_isr(&serial2, RT_SERIAL_EVENT_RX_IND);
-        /* clear interrupt */
-        USART_ClearITPendingBit(uart->uart_device, USART_IT_RXNE);
     }
     if (USART_GetITStatus(uart->uart_device, USART_IT_TC) != RESET)
     {
@@ -437,7 +435,7 @@ void rt_hw_usart_init(void)
 
     NVIC_Configuration(&uart2);
 
-    /* register UART1 device */
+    /* register UART2 device */
     rt_hw_serial_register(&serial2, "uart2",
                           RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX,
                           uart);
@@ -453,7 +451,7 @@ void rt_hw_usart_init(void)
 
     NVIC_Configuration(&uart3);
 
-    /* register UART1 device */
+    /* register UART3 device */
     rt_hw_serial_register(&serial3, "uart3",
                           RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX,
                           uart);
